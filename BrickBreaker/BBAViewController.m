@@ -8,6 +8,7 @@
 
 #import "BBAViewController.h"
 #import "BBALevelController.h"
+#import "BBAGameData.h"
 
 @interface BBAViewController () <BBALevelDelegate>
 
@@ -55,9 +56,14 @@
 
 -(void)addPoints:(int)points
 {
-    statusBarLeft.text = [NSString stringWithFormat:@"Score: %d", points];
-    
+//    statusBarLeft.text = [NSString stringWithFormat:@"Score: %d", points];
 
+// Shows the TOP SCORE ?
+//    statusBarLeft.text = [NSString stringWithFormat:@"%d", [BBAGameData mainData].topScore];
+
+// Shows the Current Score
+    statusBarLeft.text = [NSString stringWithFormat:@"%d", [BBAGameData mainData].currentScore];
+    
 }
 
 

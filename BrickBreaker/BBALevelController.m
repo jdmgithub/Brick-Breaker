@@ -9,13 +9,14 @@
 #import "BBALevelController.h"
 #import "MOVE.h"
 #import <AVFoundation/AVFoundation.h>
+#import "BBAGameData.h"
 
 
-@interface BBALevelController () <UICollisionBehaviorDelegate>
+@interface BBALevelController () <UICollisionBehaviorDelegate, AVAudioPlayerDelegate>
 
 // audio player
-@property (nonatomic) AVAudioPlayer * player;
-
+//@property (nonatomic) AVAudioPlayer * player;
+@property (nonatomic) NSMutableArray * players;  // to play more sounds simultaneously
 
 @property (nonatomic) UIImageView * paddle;
 @property (nonatomic) NSMutableArray * balls;
@@ -64,7 +65,8 @@
 
         self.bricks = [@[] mutableCopy];
         self.balls = [@[] mutableCopy];
-
+        self.players = [@[] mutableCopy];
+        
         paddleWidth = 80;
         points = 0;
         
@@ -90,13 +92,23 @@
     // can do a url to file within the app (eg. a local URL). Do this or with data.
     NSURL * url = [[NSURL alloc] initFileURLWithPath:file];
     
-    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    AVAudioPlayer * player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     
-    [self.player play];
+    player.delegate = self;
+    
+    [self.players addObject:player];
+    
+    [player play];
     
 }
 
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
+// done to remove players from array when done.
+{
 
+    [self.players removeObjectIdenticalTo:player];
+
+}
 
 
 
@@ -112,9 +124,13 @@
 {
     self.animator = [[UIDynamicAnimator alloc]   initWithReferenceView:self.view];
 
+    [BBAGameData mainData].currentScore = 0;
+    
     [self createPaddle];
     [self createBall];
     [self createBricks];
+    [self playSoundWithName:@"xylophone_affirm1"];
+
 
     self.collider = [[UICollisionBehavior alloc] initWithItems:[self allItems]];
     
@@ -163,10 +179,7 @@
  
         [self playSoundWithName:@"retro_click"];
     
-    
     }
-    
-    
     
     for (UIView * brick in self.bricks)
     {
@@ -183,11 +196,19 @@
                 
                 NSLog(@"Total Points = %d", points);
 
+                NSInteger currentScore = [BBAGameData mainData].currentScore;
+                
+                [BBAGameData mainData].currentScore = currentScore + brick.tag;
+                
+                
+                
                 [self pointLabelWithBrick:brick];
                 [self.delegate addPoints:(int)points];
- 
+
             }
             brick.alpha = 0.5;
+            [self playSoundWithName:@"pistachio1_click"];
+
         }
     }
     
