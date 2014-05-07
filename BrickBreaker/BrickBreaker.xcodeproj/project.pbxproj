@@ -24,6 +24,9 @@
 		1B130AB819001BC0002CA2C5 /* BBAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B130AB719001BC0002CA2C5 /* BBAViewController.m */; };
 		1B130ABB19001D4A002CA2C5 /* BBALevelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B130ABA19001D4A002CA2C5 /* BBALevelController.m */; };
 		1B23EDF8190151980020A633 /* MOVE.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B23EDF7190151980020A633 /* MOVE.m */; };
+		1B3FA48E1919AFE400888A45 /* pistachio1_click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1B3FA48D1919AFE400888A45 /* pistachio1_click.wav */; };
+		1B3FA4901919B00000888A45 /* woody_click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1B3FA48F1919B00000888A45 /* woody_click.wav */; };
+		1B3FA4921919B05F00888A45 /* xylophone_affirm1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1B3FA4911919B05F00888A45 /* xylophone_affirm1.wav */; };
 		1B66CE181903F5FA001E2CB3 /* bookPaddle.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B66CE161903F5FA001E2CB3 /* bookPaddle.png */; };
 		1B66CE191903F5FA001E2CB3 /* bookBlocks.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B66CE171903F5FA001E2CB3 /* bookBlocks.png */; };
 		1BAA826F191958FA00B9A853 /* BBASingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA826E191958FA00B9A853 /* BBASingleton.m */; };
@@ -64,6 +67,9 @@
 		1B130ABA19001D4A002CA2C5 /* BBALevelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBALevelController.m; sourceTree = "<group>"; };
 		1B23EDF6190151980020A633 /* MOVE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOVE.h; path = "../../../../Downloads/Move-master/MOVE.h"; sourceTree = "<group>"; };
 		1B23EDF7190151980020A633 /* MOVE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOVE.m; path = "../../../../Downloads/Move-master/MOVE.m"; sourceTree = "<group>"; };
+		1B3FA48D1919AFE400888A45 /* pistachio1_click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pistachio1_click.wav; sourceTree = "<group>"; };
+		1B3FA48F1919B00000888A45 /* woody_click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = woody_click.wav; sourceTree = "<group>"; };
+		1B3FA4911919B05F00888A45 /* xylophone_affirm1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = xylophone_affirm1.wav; sourceTree = "<group>"; };
 		1B66CE161903F5FA001E2CB3 /* bookPaddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bookPaddle.png; path = ../../../../Downloads/bookPaddle.png; sourceTree = "<group>"; };
 		1B66CE171903F5FA001E2CB3 /* bookBlocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bookBlocks.png; path = ../../../../Downloads/bookBlocks.png; sourceTree = "<group>"; };
 		1BAA826D191958FA00B9A853 /* BBASingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBASingleton.h; sourceTree = "<group>"; };
@@ -99,6 +105,9 @@
 			children = (
 				1B0D684E1917D615002A1A1B /* electric_alert.wav */,
 				1B0D684C1917D603002A1A1B /* retro_click.wav */,
+				1B3FA48D1919AFE400888A45 /* pistachio1_click.wav */,
+				1B3FA48F1919B00000888A45 /* woody_click.wav */,
+				1B3FA4911919B05F00888A45 /* xylophone_affirm1.wav */,
 			);
 			name = Sounds;
 			sourceTree = "<group>";
@@ -270,9 +279,12 @@
 			files = (
 				1B0D684F1917D615002A1A1B /* electric_alert.wav in Resources */,
 				1B130A92190019C4002CA2C5 /* InfoPlist.strings in Resources */,
+				1B3FA4901919B00000888A45 /* woody_click.wav in Resources */,
 				1B66CE181903F5FA001E2CB3 /* bookPaddle.png in Resources */,
+				1B3FA48E1919AFE400888A45 /* pistachio1_click.wav in Resources */,
 				1B66CE191903F5FA001E2CB3 /* bookBlocks.png in Resources */,
 				1B0D684D1917D603002A1A1B /* retro_click.wav in Resources */,
+				1B3FA4921919B05F00888A45 /* xylophone_affirm1.wav in Resources */,
 				1B130A9A190019C4002CA2C5 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
